@@ -4,7 +4,7 @@
 
 ## Логины
 
-```text
+text
 admin / admin
 ivanov / pass123
 petrova / pass456
