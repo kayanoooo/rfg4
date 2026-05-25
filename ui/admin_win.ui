@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWindow</class>
+ <widget class="QMainWindow" name="AdminWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1300</width><height>820</height></rect></property>
+  <property name="windowTitle"><string>Пиццерия — Администратор</string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayoutMain">
+    <item>
+     <widget class="QWidget" name="frameTop">
+      <layout class="QHBoxLayout" name="horizontalLayoutTop">
+       <item><widget class="QLabel" name="labelWindowTitle"><property name="text"><string>Панель администратора</string></property></widget></item>
+       <item><spacer name="sp1"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+       <item><widget class="QLabel" name="labelCurrentUser"><property name="text"><string>Администратор</string></property></widget></item>
+       <item><widget class="QPushButton" name="pushButtonLogout"><property name="text"><string>Выйти</string></property></widget></item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidgetMain">
+      <widget class="QWidget" name="tabUsers">
+       <attribute name="title"><string>Пользователи</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutUsers">
+        <item>
+         <widget class="QWidget" name="frameUsersButtons">
+          <layout class="QHBoxLayout" name="horizontalLayoutUsersButtons">
+           <item><widget class="QPushButton" name="pushButtonRefreshUsers"><property name="text"><string>Обновить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonAddUser"><property name="text"><string>Добавить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonEditUser"><property name="text"><string>Редактировать</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonDeleteUser"><property name="text"><string>Удалить</string></property></widget></item>
+           <item><spacer name="sp2"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+          </layout>
+         </widget>
+        </item>
+        <item><widget class="QTableWidget" name="tableWidgetUsers"/></item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabMenu">
+       <attribute name="title"><string>Меню</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutMenu">
+        <item>
+         <widget class="QWidget" name="frameMenuButtons">
+          <layout class="QHBoxLayout" name="horizontalLayoutMenuButtons">
+           <item><widget class="QPushButton" name="pushButtonRefreshMenu"><property name="text"><string>Обновить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonAddPizza"><property name="text"><string>Добавить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonEditPizza"><property name="text"><string>Редактировать</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonDeletePizza"><property name="text"><string>Удалить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonOpenOffers"><property name="text"><string>Акции</string></property></widget></item>
+           <item><spacer name="sp3"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaMenu">
+          <property name="widgetResizable"><bool>true</bool></property>
+          <widget class="QWidget" name="scrollAreaWidgetContentsMenu"/>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabOrders">
+       <attribute name="title"><string>Заказы</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutOrders">
+        <item>
+         <widget class="QWidget" name="frameOrderFilters">
+          <layout class="QGridLayout" name="gridLayoutOrderFilters">
+           <item row="0" column="0"><widget class="QLabel" name="labelDateFrom"><property name="text"><string>Дата с</string></property></widget></item>
+           <item row="0" column="1"><widget class="QDateEdit" name="dateEditFrom"/></item>
+           <item row="0" column="2"><widget class="QLabel" name="labelDateTo"><property name="text"><string>Дата по</string></property></widget></item>
+           <item row="0" column="3"><widget class="QDateEdit" name="dateEditTo"/></item>
+           <item row="0" column="4"><widget class="QLabel" name="labelStatusFilter"><property name="text"><string>Статус</string></property></widget></item>
+           <item row="0" column="5"><widget class="QComboBox" name="comboBoxStatusFilter"/></item>
+           <item row="0" column="6"><widget class="QPushButton" name="pushButtonApplyOrderFilters"><property name="text"><string>Применить</string></property></widget></item>
+           <item row="0" column="7"><widget class="QPushButton" name="pushButtonRefreshOrders"><property name="text"><string>Обновить</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item><widget class="QTableWidget" name="tableWidgetOrders"/></item>
+        <item>
+         <widget class="QWidget" name="frameOrderStatus">
+          <layout class="QHBoxLayout" name="horizontalLayoutOrderStatus">
+           <item><widget class="QLabel" name="labelSelectedOrder"><property name="text"><string>Выбранный заказ</string></property></widget></item>
+           <item><widget class="QLineEdit" name="lineEditSelectedOrderId"/></item>
+           <item><widget class="QLabel" name="labelNewStatus"><property name="text"><string>Новый статус</string></property></widget></item>
+           <item><widget class="QComboBox" name="comboBoxNewStatus"/></item>
+           <item><widget class="QPushButton" name="pushButtonUpdateStatus"><property name="text"><string>Изменить статус</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabAnalytics">
+       <attribute name="title"><string>Аналитика</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutAnalytics">
+        <item>
+         <widget class="QWidget" name="frameAnalyticsTop">
+          <layout class="QHBoxLayout" name="horizontalLayoutAnalyticsTop">
+           <item><widget class="QPushButton" name="pushButtonRefreshAnalytics"><property name="text"><string>Обновить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonGenerateReport"><property name="text"><string>Сформировать отчет</string></property></widget></item>
+           <item><spacer name="sp4"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+          </layout>
+         </widget>
+        </item>
+        <item><widget class="QGroupBox" name="groupBoxTotalSales"><property name="title"><string>Общая сумма заказов</string></property><layout class="QVBoxLayout" name="verticalLayoutTotalSales"><item><widget class="QLabel" name="labelTotalSalesValue"><property name="text"><string>0.00 ₽</string></property></widget></item></layout></widget></item>
+        <item><widget class="QGroupBox" name="groupBoxOrderStats"><property name="title"><string>Статистика по статусам</string></property><layout class="QVBoxLayout" name="verticalLayoutOrderStats"><item><widget class="QTableWidget" name="tableWidgetStatusStats"/></item></layout></widget></item>
+        <item><widget class="QGroupBox" name="groupBoxPopularPizzas"><property name="title"><string>Популярные позиции</string></property><layout class="QVBoxLayout" name="verticalLayoutPopular"><item><widget class="QTableWidget" name="tableWidgetPopularPizzas"/></item></layout></widget></item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabRoles">
+       <attribute name="title"><string>Роли</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutRoles">
+        <item>
+         <widget class="QWidget" name="frameRolesButtons">
+          <layout class="QHBoxLayout" name="horizontalLayoutRolesButtons">
+           <item><widget class="QPushButton" name="pushButtonRefreshRoles"><property name="text"><string>Обновить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonAddRole"><property name="text"><string>Добавить</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonEditRole"><property name="text"><string>Редактировать</string></property></widget></item>
+           <item><widget class="QPushButton" name="pushButtonDeleteRole"><property name="text"><string>Удалить</string></property></widget></item>
+           <item><spacer name="sp5"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+          </layout>
+         </widget>
+        </item>
+        <item><widget class="QTableWidget" name="tableWidgetRoles"/></item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
